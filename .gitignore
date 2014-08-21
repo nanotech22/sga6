@@ -1,4 +1,5 @@
 *.aux
+*.bcf
 *.log
 *.out
 *.pdf
@@ -9,4 +10,6 @@
 *.run.xml
 *.synctex.gz
 *.synctex.gz(busy)
+*.toc
 *.brf
+

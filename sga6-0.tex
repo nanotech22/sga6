@@ -1,0 +1,120 @@
+% !TEX root = sga6.tex
+
+\addtocounter{chapter}{-1}
+\chapter{Esquisse d'un programme pour une théorie des intersections sur les schémas généraux}\label{sec:0}
+\chaptermark{Esquisse d'un programme}
+
+
+
+
+
+Le présent exposé est de nature introductif, et sa lecture n'est pas logiquement indispensable pour l'étude du Séminaire. Il s'adresse plus particulièrement aux lecteurs de la version provisoire du théorème de Riemann-Roch, telle qu'elle est exposée dans le rapport de Borel-Serre \cite{bs58} ou dans la rapport de Grothendieck déjà mentionné dans l'introduction, et qui est reproduit sous forme d'appendice à la fin du présent exposé. 
+
+
+
+
+
+\section{}
+
+Rappelons la formule de Riemann-Roch pour un morphisme propre 
+\[
+  f:X\to Y
+\]
+de schémas quasi-projectifs et lisses sur un corps $k$, et un faisceau cohérent $F$ sur $X$, dont la classe dans le groupe $K(X)$ des classes de faisceaux cohérents sur $X$ est notée par $\class(F)$:
+\begin{equation}\label{eq:0-1-1}
+  \todd(T_Y) \chern_Y(f_\ast(\class(F))) = f_\ast (\todd(T_X))\chern_X(F)) .
+\end{equation}
+Cette formule est valable dans $\chow(Y)\otimes_\dZ\dQ$, où $\chow(Y)$ est l'anneau de Chow de $Y$, le $f_\ast$ du second membre étant déduit par tensorisation par $\dQ$ de l'homomorphisme ``image directe de cycles''
+\[
+  f_\ast:\chow(X)\to \chow(Y),
+\]
+celui du premier étant le caractéristique d'Euler-Poincaré de $F$ relativement à $f$:
+\[
+  f_\ast(\class(F)) = \sum_i (-1)^i \class(\eR^i f_\ast(F));
+\]
+$\chern_X$, $\chern_Y$ désignent les caractères de Chern sur $X$ resp.~sur $Y$, et $T_X$, $T_Y$ les fibrés tangents à $X$ resp.~à $Y$. Comme on sait, $\todd(-)$ et $\chern(-)$ sont des polynômes universels à coefficients dans $\dQ$ en les classes de Chern de l'argument. Le terme constant de $\todd(-)$ étant $1$, c'est un élément inversible pour toute valeur l'argument, sorte que la formule \eqref{eq:0-1-1} prend après multiplication par $\todd(T_Y)^{-1}$ la forme équivalente, plus commode pour notre propos 
+\begin{equation}\label{eq:0-1-2}
+  \chern_Y(f_\ast(\class(F)) = f_\ast(\todd(T_f)\cdot \chern(F)) ,
+\end{equation}
+où on a posé 
+\begin{equation}\label{eq:0-1-3}
+  T_f = T_X-f^\ast(T_Y)\in K(X) ,
+\end{equation}
+de sorte que $T_f$ joue le rôle d'un \emph{fibré tangent relatif virtuel} de $X$ sur $Y$. Dans le cas où le morphisme $f$ est lisse (i.e.~à application tangente partout surjective), on a simplement 
+\[
+  T_f = T_{X/Y} \qquad\text{(fibré tangent le long des fibres)} ,
+\]
+tandis que dans le cas où $f:X\to Y$ est une immersion, on trouve 
+\[
+  T_f = -\widecheck N_{X/Y} ,
+\]
+où $\widecheck N_{X/Y}$ désigne le faisceau normal de $X$ dans $Y$. 
+
+Un des buts principaux du Séminaire est de généraliser \eqref{eq:0-1-2} simultanément dans deaux directions:
+\begin{enumerate}[\indent a)]
+  \item Se débarasser de l'hypothèse de l'existence d'un corps de base $k$. 
+  \item Remplacer les hypothèse de régularité sur $Y$, $X$ par une hypothèse de ``régularité locale'' de $f$. 
+\end{enumerate}
+Enfin, chemin faisant nous nous occuperons également du problème: 
+\begin{enumerate}[\indent a)]
+\setcounter{enumi}{2}
+  \item Eliminer les hypothèses de quasi-projectivité qui, en l'absence d'un corps de base, s'expriment par l'existence de Modules inversibles amples sur $X$ et sur $Y$. 
+\end{enumerate}
+
+
+
+
+
+\section{}\label{sec:0-2}
+
+Examinons d'abord la généralisation a), en gardant cependant les hypothèses de régularité et d'existence de Modules inversibles amples sur $X$ et sur $Y$. 
+
+La définition de $K(X)$, $K(Y)$ et de l'homomorphisme $f_\ast:K(X)\to K(Y)$ n'offre alors pas de nouveau problème, grâce au fait que $X$ et $Y$ sont réguliers. La voie le plus naturelle pour donner un sens à \eqref{eq:0-1-2} semble donc consister en la définition d'\emph{anneaux de Chow} $\chow(X)$, $\chow(Y)$ et d un homomorphisme de groupes 
+\[
+  f_\ast:\chow(X)\to \chow(Y),
+\]
+en l'établissement d une théorie des classes de Chern, fournissant des applications 
+\[
+  c_i:K(X)\to K(Y),
+\]
+et de même pour $Y$, et enfin en la description d'un élément fibre tangent relatif virtuel 
+\[
+  T_f\in K(X) .
+\]
+
+
+
+\subsection{}
+
+Pour ce qui est de cette dernière, une définition s'offre de façon assez évidente. On utilise le fait que le morphisme $f$, grâce à l'hypothèse d'existence d'un Module inversible ample sur $X$ et sur $Y$, peut se factoriser 
+\begin{equation}\label{eq:0-2-1}
+\begin{tikzcd}
+  X \ar[r, "i"] 
+    & X'\ar[r, "f'"]
+    & Y ,
+\end{tikzcd}
+\end{equation}
+où $i$ est une immersion fermée, et $f'$ un morphisme lisse; par exemple on pourra prendre $X'=\dP_Y^r$ pour $r$ convenable. On posera alors 
+\begin{equation}\label{eq:-0202}
+  \widecheck T_f = \class(\Omega_{X'/Y}^1)-\class(\sN_{X/X'}),
+\end{equation}
+où $\Omega_{X'/Y}^1$ est le Module localement libre des $1$-différentielles relatives de $X'$ sur $Y$ (ou Module cotangent relatif de $X'$ sur $Y$), et $\sN_{X/X'}$ le Module conormal de $X$ dans $X'$, égale par définition à $\sJ/\sJ^2$ où $\sJ$ est l'Idéal sur $X'$ définissant le sous-schémas formé $X$; comme $X$ et $X'$ sont réguliers, on en conclut d'ailleurs que $\sN_{X/X'}$ est également localement libre. Enfin $\widecheck T_f$ désigne le dual de $T_f$. On vérifie sans peine (\ref{sec:8}) que l'élément $T_f$ défini par \eqref{eq:0-2-1} ne dépend pas de la factorisation de $f$ choisie. 
+
+
+
+
+\subsection{} % 2.2
+
+Quant à une définition, sous les conditions envisagées, d'un anneau de Chow et d une théorie des classes de Chern correspondante, bien qu'il
+[\ldots not finished!]
+
+
+
+
+
+
+
+
+
+
+\chapter*{Classes de faisceaux et theoreme de Riemann-Roch}

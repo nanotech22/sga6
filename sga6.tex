@@ -1,0 +1,57 @@
+\documentclass[a5paper,oneside]{memoir}
+\usepackage[frenchb]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{
+  amsmath,
+  amssymb,
+  bm,          % boldsymbol
+  bookmark,    % replaces (and loads) hyperref
+  csquotes,    % babel wants this
+  enumerate,   % custom counters for lists
+  lmodern,     % fixes font scaling?
+  mathabx,     % enables widecheck
+  mathrsfs,    % mathscr
+  microtype,   % improved looks
+  sga6,        % custom style
+  tikz-cd,     % better commutative diagrams
+}
+
+\usepackage[
+  hyperref = true,      % links to online documents
+  backend  = bibtex,    % use bibtex instead of biber
+  sorting  = nyt,       % sort by (name, year, title)
+  style    = alphabetic % citations look like [Har77]
+]{biblatex}
+\addbibresource{sga6.bib}
+
+\hypersetup{
+  colorlinks = true,
+  linkcolor  = blue,
+  urlcolor   = cyan
+}
+\setulmarginsandblock{3cm}{3cm}{*}
+\setlrmarginsandblock{1.5cm}{1.5cm}{*}
+\checkandfixthelayout
+\fixpdflayout
+
+\title{Seminaire de geometrie algebrique du Bois Marie}
+\author{un Séminaire dirigé par P.~Berthelot, A.~Grothenieck, L.~Illusie avec la collaboration de D.~Ferrand, J.~P.~Jouanolou, O.~Jussila, S.~Kleiman, M.~Raynaud, J.~P.~Serre}
+\date{1966--67}
+
+
+\begin{document}
+\setsecnumdepth{subsection}
+\maketitle
+\tableofcontents
+
+
+\input{sga6-0}
+
+
+
+
+
+\printbibliography
+\end{document}
